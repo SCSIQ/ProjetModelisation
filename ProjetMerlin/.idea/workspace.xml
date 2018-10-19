@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="841" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539931673612" />
+  </component>
+  <component name="RunManager">
+    <configuration name="ProjetMerlin" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="projetmerlin.ProjetMerlin" />
+      <module name="ProjetMerlin" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+</project>
