@@ -5,10 +5,6 @@
  */
 package projetmerlin;
 
-/**
- *
- * @author eg816621
- */
 public class Chateau implements Lieux {
     
 }

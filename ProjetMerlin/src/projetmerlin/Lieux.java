@@ -5,10 +5,8 @@
  */
 package projetmerlin;
 
-/**
- *
- * @author eg816621
- */
 public interface Lieux {
-    
+
+    String toString();
+
 }

@@ -5,10 +5,10 @@
  */
 package projetmerlin;
 
-/**
- *
- * @author eg816621
- */
 public class Clairiere implements Lieux {
-    
+
+    @Override
+    public String toString() {
+        return "Clairiere";
+    }
 }

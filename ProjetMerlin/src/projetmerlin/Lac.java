@@ -5,10 +5,16 @@
  */
 package projetmerlin;
 
-/**
- *
- * @author eg816621
- */
 public class Lac implements Lieux {
-    
+
+    @Override
+    public String toString() {
+        return "Lac";
+    }
+
+    public boolean aGagne(Merlin merlin) {
+        boolean gagne = false;
+        if(merlin.getNbParchemins()==3) {gagne = true;}
+        return gagne;
+    }
 }

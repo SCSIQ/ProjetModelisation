@@ -5,18 +5,23 @@
  */
 package projetmerlin;
 
-/**
- *
- * @author eg816621
- */
 public class ProjetMerlin {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        System.out.println("coucou");
+
+        //Création des différents lieux
+        Oree oree = new Oree();
+        Chateau chateau = new Chateau();
+        Clairiere clairiere = new Clairiere();
+        Grotte grotte = new Grotte();
+        Lac lac = new Lac();
+
+        Merlin merlin = new Merlin(oree);
+        System.out.println(merlin.toString());
+
     }
     
 }

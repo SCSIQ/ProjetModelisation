@@ -4,11 +4,29 @@
  * and open the template in the editor.
  */
 package projetmerlin;
+import java.util.Random;
 
-/**
- *
- * @author eg816621
- */
 public class Merlin {
-    
+
+    private Lieux position;
+    private int nbParchemins;
+
+    public Merlin(Lieux position) {
+        this.position = position;
+        nbParchemins = 0;
+    }
+
+    public void seDeplacer() {
+        Random rand = new Random();
+        int n = rand.nextInt(4); //random entre 0 et 4
+    }
+
+    @Override
+    public String toString() {
+        return "Lieux actuel : "+position.toString();
+    }
+
+    public int getNbParchemins() {
+        return nbParchemins;
+    }
 }
