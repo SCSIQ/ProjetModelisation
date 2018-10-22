@@ -12,16 +12,23 @@ public class ProjetMerlin {
      */
     public static void main(String[] args) {
 
-        //Création des différents lieux
         Oree oree = new Oree();
-        Chateau chateau = new Chateau();
-        Clairiere clairiere = new Clairiere();
-        Grotte grotte = new Grotte();
-        Lac lac = new Lac();
-
         Merlin merlin = new Merlin(oree);
-        System.out.println(merlin.toString());
+        System.out.println("\n0 // "+merlin.toString());
+
+        int i = 0;
+        while ((merlin.isaGagne() == false) && (merlin.isaPerdu() == false)) {
+            merlin.seDeplacer();
+            System.out.println((i+1)+" // "+merlin.toString());
+            i++;
+        }
+
+        if(merlin.isaGagne() == true) {
+            System.out.println("\nMerlin a gagné !");
+        }else{
+            System.out.println("\nMerlin a perdu");
+        }
 
     }
-    
+
 }
