@@ -12,21 +12,26 @@ public class ProjetMerlin {
      */
     public static void main(String[] args) {
 
+        Fraction f = new Fraction(4,5);
+
+        f.Mult(new Fraction(4,5));
+        f.Mult(new Fraction(4,5));
+        f.Mult(new Fraction(1,5));
+
+        System.out.println("f : "+f.toString());
+
+        //initialisation
         Oree oree = new Oree();
         Merlin merlin = new Merlin(oree);
-        System.out.println("\n0 // "+merlin.toString());
 
+        //simulation et affichage
         int i = 0;
+        merlin.majProbas();
+        System.out.println("\n0 // "+merlin.toString());
         while ((merlin.isaGagne() == false) && (merlin.isaPerdu() == false)) {
             merlin.seDeplacer();
             System.out.println((i+1)+" // "+merlin.toString());
             i++;
-        }
-
-        if(merlin.isaGagne() == true) {
-            System.out.println("\nMerlin a gagné !");
-        }else{
-            System.out.println("\nMerlin a perdu");
         }
 
     }

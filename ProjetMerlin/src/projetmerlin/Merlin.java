@@ -10,6 +10,10 @@ public class Merlin {
 
     private Lieux position;
     private int nbParchemins;
+    private boolean aGagne;
+    private boolean aPerdu;
+    private Fraction probaGagner = new Fraction(0);
+    private Fraction probaPerdre = new Fraction(1,5);
 
     public boolean isaGagne() {
         return aGagne;
@@ -18,9 +22,6 @@ public class Merlin {
     public boolean isaPerdu() {
         return aPerdu;
     }
-
-    private boolean aGagne;
-    private boolean aPerdu;
 
     public Merlin(Lieux position) {
         this.position = position;
@@ -56,11 +57,44 @@ public class Merlin {
                 }
                 break;
         }
+        majProbas();
+    }
+
+    public void majProbas() {
+        if(this.nbParchemins == 3) {
+            this.probaGagner = new Fraction(1);
+            this.probaPerdre = new Fraction(0);
+        }else if(this.nbParchemins == 2){
+            this.probaGagner = new Fraction(0).Mult(new Fraction(2,5));
+        }else if(this.nbParchemins == 1){
+            this.probaGagner = new Fraction(0).Mult(new Fraction(2,5));
+            this.probaGagner = this.probaGagner.Mult(new Fraction(1,5));
+        }else if(this.nbParchemins == 0){
+            this.probaGagner = new Fraction(0).Mult(new Fraction(3,5));
+            this.probaGagner = this.probaGagner.Mult(new Fraction(2,5));
+            this.probaGagner = this.probaGagner.Mult(new Fraction(1,5));
+        }
     }
 
     @Override
     public String toString() {
-        return "Lieux actuel : "+position.toString()+" | nombre de parchemins : "+nbParchemins;
+
+        String toReturn = "";
+
+        toReturn += "Lieux actuel : "+position.toString()+" | nombre de parchemins : "+nbParchemins;
+
+        if(this.position.toString() == "Lac") {
+            if(this.aGagne) {
+                toReturn += "\n\nMerlin a gagné";
+            }else{
+                toReturn += "\n\nMerlin a perdu";
+            }
+        }else{
+            toReturn += "\n   Probabilité de gagner : "+this.probaGagner.toString();
+            toReturn += "\n   Probabilité de perdre : "+this.probaPerdre.toString()+"\n";
+        }
+
+        return toReturn;
     }
 
     public int getNbParchemins() {
