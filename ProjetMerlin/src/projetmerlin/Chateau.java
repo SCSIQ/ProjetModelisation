@@ -23,7 +23,7 @@ public class Chateau implements Lieux {
 
     @Override
     public String toString() {
-        return "Chateaur";
+        return "Chateau";
     }
 
 }
