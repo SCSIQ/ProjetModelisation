@@ -7,20 +7,6 @@ package projetmerlin;
 
 public class Grotte implements Lieux {
 
-    static boolean parcheminRecup = false;
-
-    public void PrendreParchemin() {
-        parcheminRecup = true;
-    }
-
-    public boolean parcheminPris() {
-        if(parcheminRecup == false) {
-            return false;
-        }else{
-            return true;
-        }
-    }
-
     @Override
     public String toString() {
         return "Grotte";

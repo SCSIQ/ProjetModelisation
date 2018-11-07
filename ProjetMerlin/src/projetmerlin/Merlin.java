@@ -10,6 +10,9 @@ public class Merlin {
 
     private Lieux position;
     private int nbParchemins;
+    private boolean parcheminChateauPris = false;
+    private boolean parcheminGrottePris = false;
+    private boolean parcheminClairierePris = false;
 
     public boolean isaGagne() {
         return aGagne;
@@ -22,8 +25,8 @@ public class Merlin {
     private boolean aGagne;
     private boolean aPerdu;
 
-    public Merlin(Lieux position) {
-        this.position = position;
+    public Merlin() {
+        this.position = new Oree();
         nbParchemins = 0;
         aGagne = false;
         aPerdu = false;
@@ -36,16 +39,16 @@ public class Merlin {
             case 0 : this.position = new Oree();
                 break;
             case 1 : this.position = new Chateau();
-                if(((Chateau) this.position).parcheminPris() == false) { nbParchemins++; }
-                ((Chateau) this.position).PrendreParchemin();
+                if(this.parcheminChateauPris == false) { nbParchemins++; }
+                this.parcheminChateauPris = true;
                 break;
             case 2 : this.position = new Clairiere();
-                if(((Clairiere) this.position).parcheminPris() == false) { nbParchemins++; }
-                ((Clairiere) this.position).PrendreParchemin();
+                if(this.parcheminClairierePris == false) { nbParchemins++; }
+                this.parcheminClairierePris = true;
                 break;
             case 3 : this.position = new Grotte();
-                if(((Grotte) this.position).parcheminPris() == false) { nbParchemins++; }
-                ((Grotte) this.position).PrendreParchemin();
+                if(this.parcheminGrottePris == false) { nbParchemins++; }
+                this.parcheminGrottePris = true;
                 break;
             case 4 : this.position = new Lac();
 

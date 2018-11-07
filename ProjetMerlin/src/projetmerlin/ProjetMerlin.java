@@ -12,22 +12,12 @@ public class ProjetMerlin {
      */
     public static void main(String[] args) {
 
-        Oree oree = new Oree();
-        Merlin merlin = new Merlin(oree);
-        System.out.println("\n0 // "+merlin.toString());
+        int nbSimulations = 1000000; // Entrez ici le nombre de simulations que vous voulez faire
 
-        int i = 0;
-        while ((merlin.isaGagne() == false) && (merlin.isaPerdu() == false)) {
-            merlin.seDeplacer();
-            System.out.println((i+1)+" // "+merlin.toString());
-            i++;
-        }
+        Simulation simulation = new Simulation(); //Crée une banque de simulations
 
-        if(merlin.isaGagne() == true) {
-            System.out.println("\nMerlin a gagné !");
-        }else{
-            System.out.println("\nMerlin a perdu");
-        }
+        //ici, vous pouvez lancer n simulations avec ou sans IHM (pour cela modifiez l'appel de fonction)
+        System.out.println("\nPour "+nbSimulations+" simulations, E(x)="+simulation.lancerSansIHM(nbSimulations));
 
     }
 
